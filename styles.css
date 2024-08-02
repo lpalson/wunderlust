@@ -362,6 +362,8 @@ header p {
 #about {
     background-color: var(--blue);
     color: var(--black);
+    padding-left: 4vb;
+    padding-right: 4vb;
     padding-bottom: 4vh;
 }
 
@@ -372,6 +374,45 @@ header p {
     padding: 6vw 4vh;
 }
 
+#about div {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1vb;
+    grid-template-rows: auto auto;
+}
+
+#about section {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+#about img {
+    place-self: center;
+    width: 45%;
+    padding-bottom: 1vw;
+}
+
+#about img[src="images/population.svg"] {
+    place-self: center;
+    width: 80%;
+    padding-bottom: 2vw;
+}
+
+#about h4 {
+    font-family: var(--regfont);
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding-bottom: 1vw;
+}
+
+#about p {
+    font-family: var(--regfont);
+    text-align: center;
+    padding-bottom: 3vw;
+}
 
 /* Contact Us Form */
 
@@ -387,7 +428,9 @@ header p {
 }
 
 .form-required {
+    display: inline;
     font-family: var(--regfont);
+    font-size: 1rem;
 }
 
 
@@ -396,4 +439,19 @@ header p {
 footer {
     background-color: var(--light-gray);
     color: var(--black);
+    padding: 4vb 6vb;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    padding-bottom: 2vb;
+}
+
+footer a {
+    color: var(--black);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 2vb 0;
 }
