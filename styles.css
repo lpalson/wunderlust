@@ -65,6 +65,7 @@ table {
     --black: #000;
 }
 
+
 /* Mobile First Styles */
 
 #skip {
@@ -100,8 +101,8 @@ body {
 
 header {
  display: grid;
- grid-template-columns: auto minmax(30%, 55%) fill;
- grid-template-rows: 3fr 2fr 1fr;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: 3fr 1fr 2fr;
  grid-template-areas: 
     "logo nav nav"
     "head head head"
@@ -119,35 +120,35 @@ header {
 
 nav {
     grid-area: nav;
-    align-self: baseline;
+    place-self: baseline stretch;
 }
 
-
 #menu-toggle { 
-    width: 50%;
+    width: 100%;
     list-style: none; 
-    padding: 0; 
-    margin: 0;
+    padding: 1rem; 
+    margin-top: 6vh;
     color: var(--black); 
     background: var(--yellow);
     font-family: var(--regfont);
     font-weight: 900;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
 }
 
-#menu-toggle a, #menu-toggle {
+#menu-toggle a {
   text-decoration: none;
-  cursor: pointer; 
-  width: 100%; 
-  color: var(--black); 
+  cursor: pointer;  
   font-family: var(--regfont);
-  padding: 20px;
 }
 
 #menu-toggle:last-child {
     border: 0;
   }
 
-/* (B) SUB-SECTIONS */
+/* SUB-SECTIONS */
 #menu-toggle ul { 
     display: none; 
 }
@@ -155,12 +156,12 @@ nav {
     display: block; 
 }
 
-/* (B2) HIDE CHECKBOX */
+/* HIDE CHECKBOX */
 #menu-toggle input[type=checkbox] { 
     display: none; 
 }
 
-/* (B3) ADD EXPAND/COLLAPSE ICON  */
+/* ADD EXPAND/COLLAPSE ICON  */
 #menu-toggle { 
   position: absolute; 
   z-index: 1;
@@ -173,20 +174,39 @@ nav {
   padding: 20px;
   text-align: center;
   font-size: 30px;
-  color: var(--white);
+  color: var(--black);
   opacity: 0;
 }
 
+#menu-toggle + input[type=checkbox]:checked {
+    background-color: var(--dark-gray);
+    color: var(--white);
 
-/* (B4) SUB-SECTION ITEMS */
+  }
+
+/* SUB-SECTION ITEMS */
 #menu-toggle ul { 
-    margin-top: 10px; 
+    margin-top: 20px; 
+    position: absolute;
+    background-color: var(--teal);
 }
 
-#menu-toggle ul li { 
-    color: #d43d3d; 
+#menu-toggle ul a {
+    color: var(--black);
+    font-variant-caps: all-small-caps;
+    font-size: 1.5rem;
 }
 
+#menu-toggle ul li {
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    border: 1px var(--black) solid;
+    text-align: center;
+
+}
+
+
+/* Main Body */
 
 h1 {
     grid-area: head;
@@ -199,4 +219,72 @@ h1 {
 header p {
     grid-area: text;
     font-family: var(--regfont);
+    font-size: 1.2rem;
+    margin: 0 4vw;
+}
+
+#intro h2 {
+    font-family: var(--fancyfont);
+    font-size: 3rem;
+    padding-left: 6vw;
+}
+
+#intro p {
+    font-family: var(--regfont);
+    font-size: 1rem;
+    line-height: 200%;
+    margin: 0 4vw;
+    padding-bottom: 2vh;
+}
+
+
+/* Image Grid */
+
+#img-grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    gap: 2vh;
+    padding-bottom: 2vh;
+}
+
+#img-grid img {
+    width: 100%;
+}
+
+
+/* Plan Your Trip */
+
+#plan {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+/* Testimonials */
+
+#testimonials {
+
+}
+
+
+/* About Your Destination */
+
+#about {
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+
+/* Contact Us Form */
+
+#contact {
+
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--light-gray);
+    color: var(--black);
 }
