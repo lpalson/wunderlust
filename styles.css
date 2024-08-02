@@ -51,7 +51,7 @@ table {
 
 /* GLOBAL */
 :root {
-    font-size: 16px;
+    font-size: 18px;
     font-family: "Montserrat", "Molle", sans-serif, cursive;
     --fancyfont: "Molle", cursive;
     --regfont: "Montserrat", sans-serif;
@@ -97,6 +97,7 @@ table {
 body {
     background: var(--white);
     background: linear-gradient(0deg, var(--white) 95%, var(--teal) 100%); 
+    quotes: auto;
 }
 
 header {
@@ -313,6 +314,48 @@ header p {
     padding: 6vw 4vh;
 }
 
+#testimonials section {
+    display: flex;
+    flex-flow: column;
+}
+
+#testimonials img {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#testimonials h4 {
+    font-family: var(--regfont);
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+#testimonials p {
+    font-family: var(--regfont);
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1vh;
+}
+
+#testimonials q {
+    font-family: var(--regfont);
+    font-style: italic;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0 5vh;
+    padding-bottom: 6vh;
+}
+
+#testimonials q:before {
+    content: "“";
+  }
+  
+#testimonials q:after {
+    content: "“";
+  }
 
 /* About Your Destination */
 
