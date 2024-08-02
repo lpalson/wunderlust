@@ -243,7 +243,7 @@ header p {
 #img-grid {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(4, auto);
     gap: 2vh;
     padding-bottom: 2vh;
 }
@@ -258,12 +258,59 @@ header p {
 #plan {
     background-color: var(--yellow);
     color: var(--black);
+    padding-bottom: 4vh;
+}
+
+#plan h3 {
+    font-family: var(--fancyfont);
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 6vw 4vh;
+}
+
+#plan div {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    gap: 2vh;
+}
+
+#plan div section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    place-self: center;
+    background-color: var(--teal);
+    border: 4px var(--white) solid;
+    border-radius: 10%;
+    padding: 4vb;
+    width: 50vw;
+}
+
+#plan div section a {
+    place-self: center;
+}
+
+#plan div section a img {
+    width: 100%;
+    place-self: center;
+}
+
+#plan h4 {
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-bottom: 3vh;
 }
 
 /* Testimonials */
 
-#testimonials {
-
+#testimonials h3 {
+    font-family: var(--fancyfont);
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 6vw 4vh;
 }
 
 
@@ -272,13 +319,32 @@ header p {
 #about {
     background-color: var(--blue);
     color: var(--black);
+    padding-bottom: 4vh;
+}
+
+#about h3 {
+    font-family: var(--fancyfont);
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 6vw 4vh;
 }
 
 
 /* Contact Us Form */
 
 #contact {
+    padding-bottom: 4vh;
+}
 
+#contact h3 {
+    font-family: var(--fancyfont);
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 6vw 4vh;
+}
+
+.form-required {
+    font-family: var(--regfont);
 }
 
 
