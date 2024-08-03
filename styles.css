@@ -433,6 +433,39 @@ header p {
     font-size: 1rem;
 }
 
+#contact div {
+    padding-left: 10%;
+    padding-right: 15%;
+}
+
+#contact input {
+    display: block;
+    width: 100%;
+    padding: 1em 1em;
+    background-color: var(--white);
+    border: 2px var(--purple) solid;
+    margin-bottom: 2vb;
+    margin-top: 0.5vb;
+}
+
+#contact div[id="names"] {
+    padding-bottom: 2vb;
+}
+
+#contact label {
+    font-family: var(--regfont);
+    font-size: 1.3rem;
+    font-variant-caps: all-small-caps;
+    font-weight: 700;
+}
+
+#contact span[class="required"] {
+    color: var(--purple);
+    padding: 0.25em;
+    font-size: 1.3rem;
+    font-variant-caps: all-small-caps;
+    font-weight: 700;
+}
 
 /* Footer */
 
