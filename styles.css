@@ -168,7 +168,7 @@ nav {
   z-index: 1;
 }
 #menu-toggle label:after {
-  content: "\0002B";
+  content: "";
   position: absolute;
   top: 0; 
   left: 0;
@@ -179,7 +179,7 @@ nav {
   opacity: 0;
 }
 
-#menu-toggle + input[type=checkbox]:checked {
+#menu-toggle ~ input[type=checkbox]:after {
     background-color: var(--dark-gray);
     color: var(--white);
 
@@ -190,6 +190,7 @@ nav {
     margin-top: 20px; 
     position: absolute;
     background-color: var(--teal);
+    width: 60%;
 }
 
 #menu-toggle ul a {
@@ -427,8 +428,7 @@ header p {
     padding: 6vw 4vh;
 }
 
-.form-required {
-    display: inline;
+#contact .form-required {
     font-family: var(--regfont);
     font-size: 1rem;
 }
@@ -438,8 +438,15 @@ header p {
     padding-right: 15%;
 }
 
+#contact label {
+    font-family: var(--regfont);
+    font-size: 1.3rem;
+    font-variant-caps: all-small-caps;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
 #contact input {
-    display: block;
     width: 100%;
     padding: 1em 1em;
     background-color: var(--white);
@@ -448,16 +455,14 @@ header p {
     margin-top: 0.5vb;
 }
 
+#contact input:focus {
+    border: 2px var(--purple) solid;
+}
+
 #contact div[id="names"] {
     padding-bottom: 2vb;
 }
 
-#contact label {
-    font-family: var(--regfont);
-    font-size: 1.3rem;
-    font-variant-caps: all-small-caps;
-    font-weight: 700;
-}
 
 #contact span[class="required"] {
     color: var(--purple);
@@ -466,6 +471,95 @@ header p {
     font-variant-caps: all-small-caps;
     font-weight: 700;
 }
+
+#contact fieldset {
+    margin-bottom: 2vb;
+}
+
+#contact fieldset legend {
+    font-family: var(--regfont);
+    font-size: 1.3rem;
+    font-variant-caps: all-small-caps;
+    font-weight: 700;
+    margin-bottom: 1vb;
+}
+
+#contact input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--white);
+    margin: 0;
+    width: 4em;
+    height: 4em;
+    border: 0.15em solid var(--purple);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+  
+#contact input[type="radio"]::before {
+    content: "";
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 2em 2em var(--purple);
+  }
+  
+#contact input[type="radio"]:checked::before {
+    transform: scale(1);
+  }
+
+#contact input[type="radio"]:focus {
+    outline: max(2px, 0.25em) solid var(--light-gray);
+    outline-offset: max(2px, 0.25em);
+  }
+  
+#contact fieldset label {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto auto;
+    gap: 1vb;
+}
+
+#contact .radio-label {
+    place-self: center start;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: var(--regfont);
+    font-variant-caps: normal;
+    font-weight: 300;
+}
+
+#contact div[id="selects"] {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "select";
+}
+
+#contact select {
+    position: relative;
+    margin-left: -10%;
+    appearance: none;
+    width: 100%;
+    padding: 1em 1em;
+    background-color: var(--white);
+    border: 2px var(--purple) solid;
+    font-family: var(--regfont);
+}
+
+#contact input[type="submit"] {
+    background-color: var(--purple);
+    color: var(--white);
+    font-family: var(--regfont);
+    font-size: 1.3rem;
+    font-variant-caps: all-small-caps;
+    font-weight: 700;
+    max-width: 80%;
+    margin: 4vb 0;
+}
+
 
 /* Footer */
 
@@ -487,4 +581,88 @@ footer a {
     text-align: center;
     text-decoration: none;
     padding: 2vb 0;
+}
+
+
+/* Tablet Styles */
+
+@media only screen and (min-width: 800px) {
+ 
+    header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 3fr 1fr 2fr;
+        grid-template-areas: 
+           "logo head"
+           "logo text"
+           "nav nav";
+       }
+
+       #logo {
+        grid-area: logo;
+        place-self: center;
+    }
+    
+    #logo img {
+        max-width: 100%;
+        min-width: 15em;
+    }
+    
+/* Main Body */
+
+h1 {
+    grid-area: head;
+    font-family: var(--fancyfont);
+    font-size: 3rem;
+    padding-left: 6vw;
+    place-self: center start;
+}
+
+header p {
+    grid-area: text;
+    font-family: var(--regfont);
+    font-size: 1.2rem;
+    margin: 0 4vw;
+}
+
+#intro h2 {
+    font-family: var(--fancyfont);
+    font-size: 3rem;
+    padding-left: 6vw;
+}
+
+#intro p {
+    font-family: var(--regfont);
+    font-size: 1rem;
+    line-height: 200%;
+    margin: 0 4vw;
+    padding-bottom: 2vh;
+}
+
+nav {
+    grid-area: nav;
+    padding: 0;
+}
+
+#menu-toggle {
+    background-color: unset;
+}
+
+#menu-toggle input, #menu-toggle label {
+    padding: 0;
+    width: 0;
+    display: none;
+}
+
+#menu-toggle ul { 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vb;
+    background-color: var(--white);
+}
+
+
+h2 {
+    padding-top: 2rem;
+}
 }
