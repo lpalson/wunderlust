@@ -68,6 +68,7 @@ table {
 
 /* Mobile First Styles */
 
+
 #skip {
     position: absolute;
     left: -10000px;
@@ -97,12 +98,11 @@ table {
 body {
     background: var(--white);
     background: linear-gradient(0deg, var(--white) 95%, var(--teal) 100%); 
-    quotes: auto;
 }
 
 header {
  display: grid;
- grid-template-columns: 1fr 1fr 1fr;
+ grid-template-columns: 2fr 1fr 1fr;
  grid-template-rows: 3fr 1fr 2fr;
  grid-template-areas: 
     "logo nav nav"
@@ -121,11 +121,11 @@ header {
 
 nav {
     grid-area: nav;
-    place-self: baseline stretch;
+    place-self: stretch;
 }
 
 #menu-toggle { 
-    width: 100%;
+    width: 50%;
     list-style: none; 
     padding: 1rem; 
     margin-top: 6vh;
@@ -199,12 +199,10 @@ nav {
     font-size: 1.5rem;
 }
 
-#menu-toggle ul li {
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+#menu-toggle li {
+    padding: 3vh 0;
     border: 1px var(--black) solid;
     text-align: center;
-
 }
 
 
@@ -246,6 +244,7 @@ header p {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: repeat(4, auto);
+    width: 100%;
     gap: 2vh;
     padding-bottom: 2vh;
 }
@@ -258,6 +257,7 @@ header p {
 /* Plan Your Trip */
 
 #plan {
+    width: 100%;
     background-color: var(--yellow);
     color: var(--black);
     padding-bottom: 4vh;
@@ -590,7 +590,7 @@ footer a {
  
     header {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-rows: 3fr 1fr 2fr;
         grid-template-areas: 
            "logo head"
@@ -609,6 +609,7 @@ footer a {
     }
     
 /* Main Body */
+
 
 h1 {
     grid-area: head;
@@ -641,7 +642,9 @@ header p {
 
 nav {
     grid-area: nav;
-    padding: 0;
+    position: absolute;
+    top: 8%;
+    place-self: start;
 }
 
 #menu-toggle {
@@ -651,18 +654,188 @@ nav {
 #menu-toggle input, #menu-toggle label {
     padding: 0;
     width: 0;
+}
+
+#menu-toggle label {
     display: none;
 }
 
 #menu-toggle ul { 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2vb;
+    grid-template-rows: 1fr;
+    gap: 0;
+    width: 80%;
+    background-color: unset;
+    padding: 0;
+}
+
+
+#menu-toggle li { 
+    border: 1px var(--white) solid;
     background-color: var(--white);
+    width: 17vb;
+    height: 2vb;
+    margin: 0.5vb;
+    place-self: center;
+    color: var(--black);
+}
+
+#menu-toggle li:hover, #menu-toggle li:focus, 
+#menu-toggle li a:hover, #menu-toggle li a:focus { 
+    background-color: var(--yellow);
+    color: var(--white);
+    border: 1px var(--yellow) solid;
 }
 
 
 h2 {
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
+
+/* Image Grid */
+
+#img-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "img img"
+    "pict pict";
+    gap: 2vh;
+    padding-bottom: 2vh;
+}
+
+#img-grid img {
+    width: 100%;
+}
+
+#img-grid picture {
+    grid-area: pict;
+}
+
+
+/* Plan Your Trip */
+
+#plan {
+    max-width: 100%;
+}
+
+
+#plan h3 {
+    font-family: var(--fancyfont);
+    font-size: 3.5rem;
+    text-align: start;
+    padding: 6vw 4vh;
+}
+
+#plan div {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    gap: 2vh;
+    max-width: 100%;
+}
+
+#plan div section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    place-self: center;
+    background-color: var(--teal);
+    border: 4px var(--white) solid;
+    border-radius: 10%;
+    padding: 4vb;
+    width: 30vw;
+}
+
+#plan div section a {
+    place-self: center;
+}
+
+#plan div section a img {
+    width: 100%;
+    place-self: center;
+}
+
+#plan h4 {
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-bottom: 3vh;
+}
+
+/* Testimonials */
+
+#testimonials {
+    padding-left: 8vh;
+    padding-right: 8vh;
+    display: grid;
+    grid-template: 
+    "title" auto
+    "sect" auto / 1fr;
+}
+
+#testimonials h3 {
+    font-family: var(--fancyfont);
+    font-size: 3.5rem;
+    text-align: start;
+    padding: 6vw 0;
+    grid-area: title;
+}
+
+#testimonials div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+#testimonials section {
+    display: grid;
+    grid-template-rows: auto repeat(3, auto);
+    grid-template-columns: auto;
+}
+
+
+#testimonials img {
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#testimonials h4 {
+    font-family: var(--regfont);
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+#testimonials p {
+    font-family: var(--regfont);
+    text-align: center;
+    font-size: 1.5rem;
+    padding-bottom: 1vh;
+}
+
+#testimonials q {
+    font-family: var(--regfont);
+    font-style: italic;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0 5vh;
+    padding-bottom: 6vh;
+}
+
+#testimonials q:before {
+    content: "“";
+  }
+  
+#testimonials q:after {
+    content: "“";
+  }
+
+
+
 }
