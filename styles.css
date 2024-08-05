@@ -459,8 +459,12 @@ header p {
     border: 2px var(--purple) solid;
 }
 
-#contact div[id="names"] {
+#contact div#names {
     padding-bottom: 2vb;
+}
+
+#contact div#nums {
+    margin-bottom: 0vb;
 }
 
 
@@ -532,13 +536,13 @@ header p {
     font-weight: 300;
 }
 
-#contact div[id="selects"] {
+#contact div#selects {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-#contact div[id="selects"] label {
+#contact div#selects label {
     margin-bottom: 1vb;
     margin-top: 2vb;
 }
@@ -645,8 +649,8 @@ header p {
 
 nav {
     grid-area: nav;
-    position: absolute;
-    top: 8%;
+    position: relative;
+    top: -3em;
     place-self: start;
 }
 
@@ -665,9 +669,9 @@ nav {
 
 #menu-toggle ul { 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    gap: 0;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto;
+    gap: 1vb;
     width: 80%;
     background-color: unset;
     padding: 0;
@@ -677,9 +681,11 @@ nav {
 #menu-toggle li { 
     border: 1px var(--white) solid;
     background-color: var(--white);
-    width: 17vb;
-    height: 2vb;
-    margin: 0.5vb;
+    min-width: 32vb;
+    max-width: 40vb;
+    height: auto;
+    margin: 0;
+    padding: 2vb 0vb;
     place-self: center;
     color: var(--black);
 }
@@ -724,7 +730,6 @@ h2 {
     max-width: 100%;
 }
 
-
 #plan h3 {
     font-family: var(--fancyfont);
     font-size: 3.5rem;
@@ -747,7 +752,7 @@ h2 {
     place-self: center;
     background-color: var(--teal);
     border: 4px var(--white) solid;
-    border-radius: 10%;
+    border-radius: 7%;
     padding: 4vb;
     width: 30vw;
 }
@@ -914,5 +919,345 @@ footer a {
     text-align: center;
     text-decoration: none;
 }
+}
+
+
+
+/* Mid-point */
+
+@media only screen and (min-width: 1100px) {
+ 
+    h2 {
+        padding-top: 6rem;
+    }
+}
+
+
+
+
+
+/* Desktop */
+
+@media only screen and (min-width: 1920px) {
+ 
+    header {
+        display: grid;
+        grid-template-columns: 0.25fr 0.5fr 1fr;
+        grid-template-rows: 2fr 1fr;
+        grid-template-areas: 
+           "logo head nav"
+           "logo text .";
+           gap: 0;
+       }
+
+       #logo {
+        grid-area: logo;
+        place-self: center;
+    }
+    
+    #logo img {
+        max-width: 100%;
+        min-width: 15em;
+    }
+    
+/* Main Body */
+
+
+h1 {
+    grid-area: head;
+    font-family: var(--fancyfont);
+    font-size: 3rem;
+    margin: 0;
+    padding: 0 1vw;
+    place-self: end start;
+}
+
+header p {
+    grid-area: text;
+    font-family: var(--regfont);
+    font-size: 1.2rem;
+    margin: 0 1vw;
+}
+
+nav {
+    grid-area: nav;
+    position: relative;
+    top: -4em;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    place-self: start;
+}
+
+#menu-toggle {
+    background-color: unset;
+}
+
+#menu-toggle input, #menu-toggle label {
+    padding: 0;
+    width: 0;
+    margin: 0;
+}
+
+#menu-toggle label {
+    display: none;
+}
+
+#menu-toggle ul { 
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto;
+    gap: 1vb;
+    background-color: unset;
+    padding: 0;
+    width: 90%;
+}
+
+
+#menu-toggle li { 
+    border: 1px var(--white) solid;
+    background-color: var(--white);
+    min-width: 28vb;
+    max-width: 40vb;
+    height: auto;
+    margin: 0;
+    padding: 2vb 0vb;
+    place-self: center;
+    color: var(--black);
+}
+
+#menu-toggle li:hover, #menu-toggle li:focus, 
+#menu-toggle li a:hover, #menu-toggle li a:focus { 
+    background-color: var(--yellow);
+    color: var(--white);
+    border: 1px var(--yellow) solid;
+}
+
+#intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.25fr 1fr;
+    grid-template-areas:
+    "maj img"
+    "majtext img";
+}
+
+#intro h2 {
+    grid-area: maj;
+    font-family: var(--fancyfont);
+    font-size: 3rem;
+    padding-left: 4vw;
+}
+
+#intro p {
+    grid-area: majtext;
+    font-family: var(--regfont);
+    font-size: 1rem;
+    line-height: 200%;
+    margin: 0 4vw;
+    padding-bottom: 2vh;
+}
+
+/* Image Grid */
+
+#img-grid {
+    grid-area: img;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "img img"
+    "pict pict";
+    gap: 2vh;
+    padding-bottom: 2vh;
+}
+
+/* Plan Your Trip */
+ 
+#plan {
+    padding: 0;
+    padding-bottom: 10vb;
+}
+
+#plan div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2vb;
+    max-width: 95%;
+    margin-left: 3vb;
+}
+
+#plan div section {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    place-self: center;
+    background-color: var(--teal);
+    border: 4px var(--white) solid;
+    border-radius: 5%;
+    padding: 3vb;
+    width: 80%;
+    height: auto;
+}
+
+#plan div section a {
+    place-self: center;
+}
+
+#plan div section a ~ img {
+    width: 70%;
+    height: auto;
+    place-self: center;
+}
+
+#plan div section img[src="images/stay.svg"] {
+    padding: 5vb 0;
+}
+
+#plan h4 {
+    place-self: start center;
+    font-variant-caps: all-small-caps;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-bottom: 0;
+    padding: 1vb;
+}
+
+
+/* Testimonials */
+
+#testimonials {
+    padding: 0;
+    padding-bottom: 10vb;
+    display: grid;
+    grid-template: 
+    "title" auto
+    "sect" auto / 1fr;
+}
+
+#testimonials h3 {
+    font-family: var(--fancyfont);
+    font-size: 3.5rem;
+    text-align: start;
+    padding: 6vw 3vb;
+    grid-area: title;
+}
+
+#testimonials div {
+    grid-area: sect;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 2vb;
+    max-width: 95%;
+    margin-left: 3vb;
+}
+
+#testimonials section {
+    display: grid;
+    grid-template-rows: 15vw repeat(3, 0.25fr);
+    grid-template-columns: auto;
+}
+
+
+#testimonials img {
+    width: 13vw;
+    margin-left: auto;
+    margin-right: auto;
+    place-self: center;
+}
+
+/* About Your Destination */
+
+#about h3 {
+    font-family: var(--fancyfont);
+    font-size: 3rem;
+    text-align: start;
+    padding: 4vw 6vh;
+}
+
+#about div {
+    padding-left: 10%;
+    padding-right: 15%;
+    padding-bottom: 6vb;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1vb;
+    grid-template-rows: auto;
+}
+
+#about section {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 2fr 0.5fr 0.5fr;
+}
+
+#about img {
+    place-self: center;
+    width: 35%;
+    padding-bottom: 1vw;
+}
+
+#about img[src="images/population.svg"] {
+    place-self: center;
+    width: 50%;
+    padding-bottom: 2vw;
+}
+
+
+/* Contact Us Form */
+
+#contact {
+    padding-bottom: 8vh;
+    padding-left: 4%;
+    padding-right: 6%;
+}
+
+#contact h3 {
+    grid-area: title;
+    font-family: var(--fancyfont);
+    font-size: 2.5rem;
+    padding: 2vw 0;
+}
+
+#contact form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.1fr 1fr 1fr;
+    gap: 2vb;
+    grid-template-areas:
+    "title title title"
+    "form1 form2 form3"
+    "form1 form2 form3";
+}
+
+#names {
+    grid-area: form1;
+}
+
+#nums {
+    grid-area: form2;
+}
+
+#selects {
+    grid-area: form3;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: var(--light-gray);
+    color: var(--black);
+    display: grid;
+    grid-template-columns: 2fr repeat(2, 0.5fr);
+    grid-template-rows: 1fr;
+}
+
+footer p {
+    place-self: center start;
+}
 
 }
+
